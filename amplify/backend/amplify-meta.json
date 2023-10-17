@@ -1,0 +1,172 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-serverlessworkshop-dev-181853-authRole",
+      "UnauthRoleArn": "arn:aws:iam::208279306203:role/amplify-serverlessworkshop-dev-181853-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::208279306203:role/amplify-serverlessworkshop-dev-181853-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
+      "UnauthRoleName": "amplify-serverlessworkshop-dev-181853-unauthRole",
+      "StackName": "amplify-serverlessworkshop-dev-181853",
+      "StackId": "arn:aws:cloudformation:us-east-2:208279306203:stack/amplify-serverlessworkshop-dev-181853/12585310-4e72-11ed-998c-06afa119b4fe",
+      "AmplifyAppId": "d2ex2s6udp8ocg"
+    }
+  },
+  "api": {
+    "serverlessworkshop": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2023-10-17T23:42:08.122Z",
+              "description": "Serverless Workshop API Key"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "a667bz5a5bhublwxgetln7xqum",
+        "GraphQLAPIEndpointOutput": "https://z4tykd6qbvds7jnab3eqn7m5xa.appsync-api.us-east-2.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-trgxwujyzvcbvouum55p46limi"
+      },
+      "lastPushTimeStamp": "2022-10-19T19:57:08.518Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiserverlessworkshop"
+      },
+      "lastPushDirHash": "IEFpvJx8zoge6H16qITwhzd8XZQ="
+    },
+    "predictionsapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "createPrediction",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "getPrediction",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "output": {
+        "ApiName": "predictionsapi",
+        "RootUrl": "https://itck4iw2g2.execute-api.us-east-2.amazonaws.com/dev",
+        "ApiId": "itck4iw2g2"
+      },
+      "lastPushTimeStamp": "2022-10-19T19:57:08.525Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/api/predictionsapi-cloudformation-template.json",
+        "logicalId": "apipredictionsapi"
+      },
+      "lastPushDirHash": "aP51CLx9rXKYOBpziKHyWOUfPDI="
+    }
+  },
+  "function": {
+    "createPrediction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:208279306203:function:createPrediction-dev",
+        "Name": "createPrediction-dev",
+        "LambdaExecutionRole": "serverlessworkshopLambdaRole0136b4ee-dev"
+      },
+      "lastPushTimeStamp": "2022-10-19T19:57:08.526Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/function/createPrediction-cloudformation-template.json",
+        "logicalId": "functioncreatePrediction"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
+        "s3Key": "amplify-builds/createPrediction-5763535972356b4e6e70-build.zip"
+      },
+      "lastBuildTimeStamp": "2022-10-19T17:39:15.711Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-10-19T17:39:16.186Z",
+      "distZipFilename": "createPrediction-5763535972356b4e6e70-build.zip",
+      "lastPushDirHash": "D4gMjBUjkRJv+2ZEc/6bnSRmiz0="
+    },
+    "getPrediction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:208279306203:function:getPrediction-dev",
+        "Name": "getPrediction-dev",
+        "LambdaExecutionRole": "serverlessworkshopLambdaRole56a80f55-dev"
+      },
+      "lastPushTimeStamp": "2022-10-19T19:57:08.529Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/function/getPrediction-cloudformation-template.json",
+        "logicalId": "functiongetPrediction"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
+        "s3Key": "amplify-builds/getPrediction-4456736d335457446a64-build.zip"
+      },
+      "lastBuildTimeStamp": "2022-10-19T17:39:15.712Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-10-19T17:39:16.193Z",
+      "distZipFilename": "getPrediction-4456736d335457446a64-build.zip",
+      "lastPushDirHash": "nm2xW1rUENsRe9xmv/2hXTRrO80="
+    }
+  },
+  "auth": {
+    "serverlessworkshopa86f5bfe": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/auth/serverlessworkshopa86f5bfe-cloudformation-template.json",
+        "logicalId": "authserverlessworkshopa86f5bfe"
+      },
+      "lastPushTimeStamp": "2022-10-19T19:57:08.797Z",
+      "output": {
+        "UserPoolId": "us-east-2_SOJbBFyok",
+        "AppClientIDWeb": "2gihj2cfq46q00v8jt8juqa9br",
+        "AppClientID": "7m3uk3sb4cl6qh6l63bdhoa55l",
+        "IdentityPoolId": "us-east-2:4cec6bc6-a484-4ef9-bc20-b51aad78a0e1",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:208279306203:userpool/us-east-2_SOJbBFyok",
+        "IdentityPoolName": "serverlessworkshopa86f5bfe_identitypool_a86f5bfe__dev",
+        "UserPoolName": "serverlessworkshopa86f5bfe_userpool_a86f5bfe"
+      },
+      "lastPushDirHash": "L9wlK0TE0M0P9a7Ru09Mnzi3VSA="
+    }
+  }
+}

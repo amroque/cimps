@@ -1,0 +1,7 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/mario_rguezz/.amplify/awscloudformation/LDq4lKohp2"
+  }
+}

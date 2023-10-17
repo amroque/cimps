@@ -1,0 +1,42 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-serverlessworkshop-dev-181853-authRole",
+      "UnauthRoleArn": "arn:aws:iam::208279306203:role/amplify-serverlessworkshop-dev-181853-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::208279306203:role/amplify-serverlessworkshop-dev-181853-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
+      "UnauthRoleName": "amplify-serverlessworkshop-dev-181853-unauthRole",
+      "StackName": "amplify-serverlessworkshop-dev-181853",
+      "StackId": "arn:aws:cloudformation:us-east-2:208279306203:stack/amplify-serverlessworkshop-dev-181853/12585310-4e72-11ed-998c-06afa119b4fe",
+      "AmplifyAppId": "d2ex2s6udp8ocg"
+    },
+    "categories": {
+      "auth": {
+        "serverlessworkshop1f074494": {},
+        "serverlessworkshop845abae9": {},
+        "serverlessworkshopa86f5bfe": {}
+      },
+      "function": {
+        "createPrediction": {
+          "replicateToken": "557b9633b83b5c5a3f2283851cb458d81e028741",
+          "stabilityDiffusionVersion": "cc201941f43a4b6299d31f28a9745f2c33523b9d78a92cf7261fcab3fc36fd37",
+          "stabilityDiffusionUrl": "https://api.replicate.com/v1/predictions",
+          "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
+          "s3Key": "amplify-builds/createPrediction-5763535972356b4e6e70-build.zip"
+        },
+        "getPrediction": {
+          "replicateToken": "557b9633b83b5c5a3f2283851cb458d81e028741",
+          "stabilityDiffusionVersion": "cc201941f43a4b6299d31f28a9745f2c33523b9d78a92cf7261fcab3fc36fd37",
+          "stabilityDiffusionUrl": "https://api.replicate.com/v1/predictions",
+          "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
+          "s3Key": "amplify-builds/getPrediction-4456736d335457446a64-build.zip"
+        }
+      },
+      "api": {
+        "serverlessworkshop": {},
+        "predictionsapi": {}
+      }
+    }
+  }
+}
