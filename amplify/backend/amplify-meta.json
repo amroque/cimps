@@ -1,19 +1,19 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-serverlessworkshop-dev-181853-authRole",
-      "UnauthRoleArn": "arn:aws:iam::208279306203:role/amplify-serverlessworkshop-dev-181853-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::208279306203:role/amplify-serverlessworkshop-dev-181853-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
-      "UnauthRoleName": "amplify-serverlessworkshop-dev-181853-unauthRole",
-      "StackName": "amplify-serverlessworkshop-dev-181853",
-      "StackId": "arn:aws:cloudformation:us-east-2:208279306203:stack/amplify-serverlessworkshop-dev-181853/12585310-4e72-11ed-998c-06afa119b4fe",
-      "AmplifyAppId": "d2ex2s6udp8ocg"
+      "AuthRoleName": "amplify-cimps-dev-142351-authRole",
+      "UnauthRoleArn": "arn:aws:iam::208279306203:role/amplify-cimps-dev-142351-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::208279306203:role/amplify-cimps-dev-142351-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-cimps-dev-142351-deployment",
+      "UnauthRoleName": "amplify-cimps-dev-142351-unauthRole",
+      "StackName": "amplify-cimps-dev-142351",
+      "StackId": "arn:aws:cloudformation:eu-north-1:208279306203:stack/amplify-cimps-dev-142351/18bee8d0-6d2b-11ee-9114-063fa555c352",
+      "AmplifyAppId": "d2fduecu77kwu0"
     }
   },
   "api": {
-    "serverlessworkshop": {
+    "cimps": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -22,112 +22,25 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2023-10-17T23:42:08.122Z",
-              "description": "Serverless Workshop API Key"
+              "apiKeyExpirationDays": 7
             }
           },
           "additionalAuthenticationProviders": []
         },
-        "GraphQLAPIIdOutput": "a667bz5a5bhublwxgetln7xqum",
-        "GraphQLAPIEndpointOutput": "https://z4tykd6qbvds7jnab3eqn7m5xa.appsync-api.us-east-2.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-trgxwujyzvcbvouum55p46limi"
+        "GraphQLAPIIdOutput": "x2z5hb3hu5aspovyr36kgtt5ca",
+        "GraphQLAPIEndpointOutput": "https://ay4xfilvxzd7rdu6smgh5cnxem.appsync-api.eu-north-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ylqd7bgzxjcc5evjbttdtwubzi"
       },
-      "lastPushTimeStamp": "2022-10-19T19:57:08.518Z",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apiserverlessworkshop"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cimps-dev-142351-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apicimps"
       },
-      "lastPushDirHash": "IEFpvJx8zoge6H16qITwhzd8XZQ="
-    },
-    "predictionsapi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "createPrediction",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "getPrediction",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ],
-      "output": {
-        "ApiName": "predictionsapi",
-        "RootUrl": "https://itck4iw2g2.execute-api.us-east-2.amazonaws.com/dev",
-        "ApiId": "itck4iw2g2"
-      },
-      "lastPushTimeStamp": "2022-10-19T19:57:08.525Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/api/predictionsapi-cloudformation-template.json",
-        "logicalId": "apipredictionsapi"
-      },
-      "lastPushDirHash": "aP51CLx9rXKYOBpziKHyWOUfPDI="
-    }
-  },
-  "function": {
-    "createPrediction": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "output": {
-        "Region": "us-east-2",
-        "Arn": "arn:aws:lambda:us-east-2:208279306203:function:createPrediction-dev",
-        "Name": "createPrediction-dev",
-        "LambdaExecutionRole": "serverlessworkshopLambdaRole0136b4ee-dev"
-      },
-      "lastPushTimeStamp": "2022-10-19T19:57:08.526Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/function/createPrediction-cloudformation-template.json",
-        "logicalId": "functioncreatePrediction"
-      },
-      "s3Bucket": {
-        "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
-        "s3Key": "amplify-builds/createPrediction-5763535972356b4e6e70-build.zip"
-      },
-      "lastBuildTimeStamp": "2022-10-19T17:39:15.711Z",
-      "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2022-10-19T17:39:16.186Z",
-      "distZipFilename": "createPrediction-5763535972356b4e6e70-build.zip",
-      "lastPushDirHash": "D4gMjBUjkRJv+2ZEc/6bnSRmiz0="
-    },
-    "getPrediction": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "output": {
-        "Region": "us-east-2",
-        "Arn": "arn:aws:lambda:us-east-2:208279306203:function:getPrediction-dev",
-        "Name": "getPrediction-dev",
-        "LambdaExecutionRole": "serverlessworkshopLambdaRole56a80f55-dev"
-      },
-      "lastPushTimeStamp": "2022-10-19T19:57:08.529Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/function/getPrediction-cloudformation-template.json",
-        "logicalId": "functiongetPrediction"
-      },
-      "s3Bucket": {
-        "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
-        "s3Key": "amplify-builds/getPrediction-4456736d335457446a64-build.zip"
-      },
-      "lastBuildTimeStamp": "2022-10-19T17:39:15.712Z",
-      "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2022-10-19T17:39:16.193Z",
-      "distZipFilename": "getPrediction-4456736d335457446a64-build.zip",
-      "lastPushDirHash": "nm2xW1rUENsRe9xmv/2hXTRrO80="
+      "lastPushTimeStamp": "2023-10-17T21:03:24.832Z",
+      "lastPushDirHash": "846jKlErb4ftMRYTcPoq2Jj8Og8="
     }
   },
   "auth": {
-    "serverlessworkshopa86f5bfe": {
+    "cimps66fa0394": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -153,20 +66,20 @@
         ]
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/auth/serverlessworkshopa86f5bfe-cloudformation-template.json",
-        "logicalId": "authserverlessworkshopa86f5bfe"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cimps-dev-142351-deployment/amplify-cfn-templates/auth/cimps66fa0394-cloudformation-template.json",
+        "logicalId": "authcimps66fa0394"
       },
-      "lastPushTimeStamp": "2022-10-19T19:57:08.797Z",
+      "lastPushTimeStamp": "2023-10-17T21:03:26.934Z",
       "output": {
-        "UserPoolId": "us-east-2_SOJbBFyok",
-        "AppClientIDWeb": "2gihj2cfq46q00v8jt8juqa9br",
-        "AppClientID": "7m3uk3sb4cl6qh6l63bdhoa55l",
-        "IdentityPoolId": "us-east-2:4cec6bc6-a484-4ef9-bc20-b51aad78a0e1",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:208279306203:userpool/us-east-2_SOJbBFyok",
-        "IdentityPoolName": "serverlessworkshopa86f5bfe_identitypool_a86f5bfe__dev",
-        "UserPoolName": "serverlessworkshopa86f5bfe_userpool_a86f5bfe"
+        "UserPoolId": "eu-north-1_QqHKz7Pva",
+        "AppClientIDWeb": "1r4vab9kh5j76hj5ltc0ug0o8g",
+        "AppClientID": "3uh83nbmgbrlt9j037ifq2jmfp",
+        "IdentityPoolId": "eu-north-1:2b14a737-fa4a-455b-996a-d36d8746965e",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-north-1:208279306203:userpool/eu-north-1_QqHKz7Pva",
+        "IdentityPoolName": "cimps66fa0394_identitypool_66fa0394__dev",
+        "UserPoolName": "cimps66fa0394_userpool_66fa0394"
       },
-      "lastPushDirHash": "L9wlK0TE0M0P9a7Ru09Mnzi3VSA="
+      "lastPushDirHash": "uHqV3v9QXqUNcqVhFbWXcyDGJqA="
     }
   }
 }

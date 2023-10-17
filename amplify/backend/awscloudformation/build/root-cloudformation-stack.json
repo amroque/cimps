@@ -152,90 +152,29 @@
         }
       }
     },
-    "apiserverlessworkshop": {
+    "apicimps": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-cimps-dev-142351-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "AppSyncApiName": "serverlessworkshop",
+          "AppSyncApiName": "cimps",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
-          "S3DeploymentBucket": "amplify-serverlessworkshop-dev-181853-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/86cc3a271a062a34d398f937cd551ecea1414989",
+          "S3DeploymentBucket": "amplify-cimps-dev-142351-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/d93b78bf12f4dc33a1953f8440fcf212d759d2bf",
           "env": "dev"
         }
       }
     },
-    "apipredictionsapi": {
+    "authcimps66fa0394": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/api/predictionsapi-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-cimps-dev-142351-deployment/amplify-cfn-templates/auth/cimps66fa0394-cloudformation-template.json",
         "Parameters": {
-          "functioncreatePredictionName": {
-            "Fn::GetAtt": [
-              "functioncreatePrediction",
-              "Outputs.Name"
-            ]
-          },
-          "functioncreatePredictionArn": {
-            "Fn::GetAtt": [
-              "functioncreatePrediction",
-              "Outputs.Arn"
-            ]
-          },
-          "functiongetPredictionName": {
-            "Fn::GetAtt": [
-              "functiongetPrediction",
-              "Outputs.Name"
-            ]
-          },
-          "functiongetPredictionArn": {
-            "Fn::GetAtt": [
-              "functiongetPrediction",
-              "Outputs.Arn"
-            ]
-          },
-          "env": "dev"
-        }
-      }
-    },
-    "functioncreatePrediction": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/function/createPrediction-cloudformation-template.json",
-        "Parameters": {
-          "replicateToken": "557b9633b83b5c5a3f2283851cb458d81e028741",
-          "stabilityDiffusionVersion": "cc201941f43a4b6299d31f28a9745f2c33523b9d78a92cf7261fcab3fc36fd37",
-          "stabilityDiffusionUrl": "https://api.replicate.com/v1/predictions",
-          "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
-          "s3Key": "amplify-builds/createPrediction-5763535972356b4e6e70-build.zip",
-          "env": "dev"
-        }
-      }
-    },
-    "functiongetPrediction": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/function/getPrediction-cloudformation-template.json",
-        "Parameters": {
-          "replicateToken": "557b9633b83b5c5a3f2283851cb458d81e028741",
-          "stabilityDiffusionVersion": "cc201941f43a4b6299d31f28a9745f2c33523b9d78a92cf7261fcab3fc36fd37",
-          "stabilityDiffusionUrl": "https://api.replicate.com/v1/predictions",
-          "deploymentBucketName": "amplify-serverlessworkshop-dev-181853-deployment",
-          "s3Key": "amplify-builds/getPrediction-4456736d335457446a64-build.zip",
-          "env": "dev"
-        }
-      }
-    },
-    "authserverlessworkshopa86f5bfe": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-serverlessworkshop-dev-181853-deployment/amplify-cfn-templates/auth/serverlessworkshopa86f5bfe-cloudformation-template.json",
-        "Parameters": {
-          "identityPoolName": "serverlessworkshopa86f5bfe_identitypool_a86f5bfe",
+          "identityPoolName": "cimps66fa0394_identitypool_66fa0394",
           "allowUnauthenticatedIdentities": false,
-          "resourceNameTruncated": "servera86f5bfe",
-          "userPoolName": "serverlessworkshopa86f5bfe_userpool_a86f5bfe",
+          "resourceNameTruncated": "cimps66fa0394",
+          "userPoolName": "cimps66fa0394_userpool_66fa0394",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -252,10 +191,10 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "servera86f5bfe_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "cimps666fa0394_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
-          "sharedId": "a86f5bfe",
-          "resourceName": "serverlessworkshopa86f5bfe",
+          "sharedId": "66fa0394",
+          "resourceName": "cimps66fa0394",
           "authSelections": "identityPoolAndUserPool",
           "useDefault": "default",
           "usernameAttributes": "email",
@@ -285,7 +224,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authserverlessworkshopa86f5bfe"
+        "authcimps66fa0394"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -295,68 +234,81 @@
               "\n",
               [
                 "const response = require('cfn-response');",
-                "const aws = require('aws-sdk');",
-                "let responseData = {};",
+                "const { IAMClient, GetRoleCommand, UpdateAssumeRolePolicyCommand } = require('@aws-sdk/client-iam');",
                 "exports.handler = function(event, context) {",
-                "  try {",
-                "    let authRoleName = event.ResourceProperties.authRoleName;",
-                "    let unauthRoleName = event.ResourceProperties.unauthRoleName;",
-                "    let idpId = event.ResourceProperties.idpId;",
-                "    let promises = [];",
-                "    let getPromises = [];",
-                "    let authParamsJson = { 'Version': '2012-10-17','Statement': [{'Effect': 'Allow','Principal': {'Federated': 'cognito-identity.amazonaws.com'},'Action': 'sts:AssumeRoleWithWebIdentity','Condition': {'StringEquals': {'cognito-identity.amazonaws.com:aud': idpId},'ForAnyValue:StringLike': {'cognito-identity.amazonaws.com:amr': 'authenticated'}}}]};",
-                "    let unauthParamsJson = { 'Version': '2012-10-17','Statement': [{'Effect': 'Allow','Principal': {'Federated': 'cognito-identity.amazonaws.com'},'Action': 'sts:AssumeRoleWithWebIdentity','Condition': {'StringEquals': {'cognito-identity.amazonaws.com:aud': idpId},'ForAnyValue:StringLike': {'cognito-identity.amazonaws.com:amr': 'unauthenticated'}}}]};",
-                "    if (event.RequestType == 'Delete') {",
-                "        delete authParamsJson.Statement[0].Condition;",
-                "        delete unauthParamsJson.Statement[0].Condition;",
-                "        let authParams = { PolicyDocument: JSON.stringify(authParamsJson),RoleName: authRoleName};",
-                "        let unauthParams = {PolicyDocument: JSON.stringify(unauthParamsJson),RoleName: unauthRoleName};",
-                "        const iam = new aws.IAM({ apiVersion: '2010-05-08', region: event.ResourceProperties.region});",
-                "        getPromises.push(iam.getRole({RoleName: authParams.RoleName}).promise());",
-                "        getPromises.push(iam.getRole({RoleName: unauthParams.RoleName}).promise());",
-                "        Promise.all(getPromises)",
-                "         .then((res) => {",
-                "        console.log('in res' , res)",
-                "           promises.push(iam.updateAssumeRolePolicy(authParams).promise());",
-                "           promises.push(iam.updateAssumeRolePolicy(unauthParams).promise());",
-                "           return Promise.all(promises)",
-                "             .then((res) => {",
-                "               console.log(\"delete response data\" + JSON.stringify(res));",
-                "               response.send(event, context, response.SUCCESS, {});",
-                "             });",
-                "          })",
-                "           .catch((err) => {",
-                "             console.log(err.stack);",
-                "             responseData = {Error: err};",
-                "             response.send(event, context, response.SUCCESS, responseData);",
-                "             })",
-                "    }",
-                "    if (event.RequestType == 'Update' || event.RequestType == 'Create') {",
-                "       const iam = new aws.IAM({ apiVersion: '2010-05-08', region: event.ResourceProperties.region});",
-                "        let authParams = { PolicyDocument: JSON.stringify(authParamsJson),RoleName: authRoleName};",
-                "        let unauthParams = {PolicyDocument: JSON.stringify(unauthParamsJson),RoleName: unauthRoleName};",
-                "        promises.push(iam.updateAssumeRolePolicy(authParams).promise());",
-                "        promises.push(iam.updateAssumeRolePolicy(unauthParams).promise());",
-                "        Promise.all(promises)",
-                "         .then((res) => {",
-                "            console.log(\"createORupdate\" + res);",
-                "            console.log(\"response data\" + JSON.stringify(res));",
+                "    // Don't return promise, response.send() marks context as done internally",
+                "    const ignoredPromise = handleEvent(event, context)",
+                "};",
+                "async function handleEvent(event, context) {",
+                "    try {",
+                "        let authRoleName = event.ResourceProperties.authRoleName;",
+                "        let unauthRoleName = event.ResourceProperties.unauthRoleName;",
+                "        let idpId = event.ResourceProperties.idpId;",
+                "        let authParamsJson = {",
+                "            'Version': '2012-10-17',",
+                "            'Statement': [{",
+                "                'Effect': 'Allow',",
+                "                'Principal': {'Federated': 'cognito-identity.amazonaws.com'},",
+                "                'Action': 'sts:AssumeRoleWithWebIdentity',",
+                "                'Condition': {",
+                "                    'StringEquals': {'cognito-identity.amazonaws.com:aud': idpId},",
+                "                    'ForAnyValue:StringLike': {'cognito-identity.amazonaws.com:amr': 'authenticated'}",
+                "                }",
+                "            }]",
+                "        };",
+                "        let unauthParamsJson = {",
+                "            'Version': '2012-10-17',",
+                "            'Statement': [{",
+                "                'Effect': 'Allow',",
+                "                'Principal': {'Federated': 'cognito-identity.amazonaws.com'},",
+                "                'Action': 'sts:AssumeRoleWithWebIdentity',",
+                "                'Condition': {",
+                "                    'StringEquals': {'cognito-identity.amazonaws.com:aud': idpId},",
+                "                    'ForAnyValue:StringLike': {'cognito-identity.amazonaws.com:amr': 'unauthenticated'}",
+                "                }",
+                "            }]",
+                "        };",
+                "        if (event.RequestType === 'Delete') {",
+                "            try {",
+                "                delete authParamsJson.Statement[0].Condition;",
+                "                delete unauthParamsJson.Statement[0].Condition;",
+                "                let authParams = {PolicyDocument: JSON.stringify(authParamsJson), RoleName: authRoleName};",
+                "                let unauthParams = {PolicyDocument: JSON.stringify(unauthParamsJson), RoleName: unauthRoleName};",
+                "                const iam = new IAMClient({region: event.ResourceProperties.region});",
+                "                let res = await Promise.all([",
+                "                    iam.send(new GetRoleCommand({RoleName: authParams.RoleName})),",
+                "                    iam.send(new GetRoleCommand({RoleName: unauthParams.RoleName}))",
+                "                ]);",
+                "                res = await Promise.all([",
+                "                    iam.send(new UpdateAssumeRolePolicyCommand(authParams)),",
+                "                    iam.send(new UpdateAssumeRolePolicyCommand(unauthParams))",
+                "                ]);",
+                "                response.send(event, context, response.SUCCESS, {});",
+                "            } catch (err) {",
+                "                console.log(err.stack);",
+                "                response.send(event, context, response.SUCCESS, {Error: err});",
+                "            }",
+                "        } else if (event.RequestType === 'Update' || event.RequestType === 'Create') {",
+                "            const iam = new IAMClient({region: event.ResourceProperties.region});",
+                "            let authParams = {PolicyDocument: JSON.stringify(authParamsJson), RoleName: authRoleName};",
+                "            let unauthParams = {PolicyDocument: JSON.stringify(unauthParamsJson), RoleName: unauthRoleName};",
+                "            const res = await Promise.all([",
+                "                iam.send(new UpdateAssumeRolePolicyCommand(authParams)),",
+                "                iam.send(new UpdateAssumeRolePolicyCommand(unauthParams))",
+                "            ]);",
                 "            response.send(event, context, response.SUCCESS, {});",
-                "         });",
+                "        }",
+                "    } catch (err) {",
+                "        console.log(err.stack);",
+                "        response.send(event, context, response.FAILED, {Error: err});",
                 "    }",
-                "  } catch(err) {",
-                "       console.log(err.stack);",
-                "       responseData = {Error: err};",
-                "       response.send(event, context, response.FAILED, responseData);",
-                "       throw err;",
-                "  }",
                 "};"
               ]
             ]
           }
         },
         "Handler": "index.handler",
-        "Runtime": "nodejs14.x",
+        "Runtime": "nodejs18.x",
         "Timeout": 300,
         "Role": {
           "Fn::GetAtt": [
@@ -380,7 +332,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authserverlessworkshopa86f5bfe",
+            "authcimps66fa0394",
             "Outputs.IdentityPoolId"
           ]
         },
