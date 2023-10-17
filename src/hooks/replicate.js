@@ -11,7 +11,7 @@ export const useReplicate = () => {
    * @param {string} prompt
    */
   const createPrediction = async (prompt) => {
-    const res = await API.post("predictionsapi", "/predictions/create", {
+    const res = await API.post("cimpsapi2023", "/create", {
       body: {
         input: { prompt },
       },
@@ -26,7 +26,7 @@ export const useReplicate = () => {
    * @returns
    */
   const getPrediction = async (id) =>
-    await API.get("predictionsapi", "/predictions/" + id);
+    await API.get("cimpsapi2023", "/prediction/" + id);
 
   return { createPrediction, getPrediction };
 };

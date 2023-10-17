@@ -15,6 +15,28 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    },
+    "cimpsapi2023": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "createPrediction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getPrediction2"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
@@ -43,6 +65,113 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "createPrediction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getPrediction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getPrediction2": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_createPrediction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createPrediction"
+        }
+      ]
+    },
+    "AMPLIFY_function_createPrediction_replicateToken": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createPrediction"
+        }
+      ]
+    },
+    "AMPLIFY_function_createPrediction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createPrediction"
+        }
+      ]
+    },
+    "AMPLIFY_function_createPrediction_stabilityDiffusionUrl": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createPrediction"
+        }
+      ]
+    },
+    "AMPLIFY_function_createPrediction_stabilityDiffusionVersion": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createPrediction"
+        }
+      ]
+    },
+    "AMPLIFY_function_getPrediction2_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getPrediction2"
+        }
+      ]
+    },
+    "AMPLIFY_function_getPrediction2_replicateToken": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getPrediction2"
+        }
+      ]
+    },
+    "AMPLIFY_function_getPrediction2_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getPrediction2"
+        }
+      ]
+    },
+    "AMPLIFY_function_getPrediction2_stabilityDiffusionUrl": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getPrediction2"
+        }
+      ]
+    },
+    "AMPLIFY_function_getPrediction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getPrediction"
+        }
+      ]
+    },
+    "AMPLIFY_function_getPrediction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getPrediction"
+        }
+      ]
     }
   }
 }

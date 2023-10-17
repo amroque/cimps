@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "replicateToken",
+      "environmentVariableName": "REPLICATE_TOKEN"
+    },
+    {
+      "cloudFormationParameterName": "stabilityDiffusionUrl",
+      "environmentVariableName": "STABILITY_DIFFUSION_URL"
+    }
+  ]
+}
