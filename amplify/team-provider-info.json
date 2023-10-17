@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cimps2023-dev-153956-authRole",
+      "UnauthRoleArn": "arn:aws:iam::208279306203:role/amplify-cimps2023-dev-153956-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::208279306203:role/amplify-cimps2023-dev-153956-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-cimps2023-dev-153956-deployment",
+      "UnauthRoleName": "amplify-cimps2023-dev-153956-unauthRole",
+      "StackName": "amplify-cimps2023-dev-153956",
+      "StackId": "arn:aws:cloudformation:eu-north-1:208279306203:stack/amplify-cimps2023-dev-153956/b9813110-6d35-11ee-a913-0ef561e9ee36",
+      "AmplifyAppId": "d2y39yxjeqaa1g"
+    },
+    "categories": {
+      "api": {
+        "cimps2023": {}
+      },
+      "auth": {
+        "cimps2023e493ce4c": {}
+      }
+    }
+  }
+}
