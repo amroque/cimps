@@ -79,8 +79,8 @@ const Home = () => {
   }, []);
 
   return (
-    <Authenticator>
-      {({ signOut, user }) => (
+   
+     
     <main className="w-full flex flex-col h-full">
       <nav className="h-20 bg-red-800 flex justify-center">
         <div className="container px-4 flex items-center">
@@ -131,8 +131,8 @@ const Home = () => {
         </div>
       </section>
     </main>
-         )}
-    </Authenticator>
+        
+   
   );
 };
 
